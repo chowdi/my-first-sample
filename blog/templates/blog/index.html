@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>syntactically awesome stylesheets.</title>
+	<link href="css/style.css" rel="stylesheet" >
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" >
+	<link href="PolymerForm/example/css/jquery.polymer-form.min.css" rel="stylesheet" >
+	<link href="css/normalize.css" rel="stylesheet" >
+	<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="PolymerForm/example/js/jquery.polymer-form.min.js"></script>
+</head>
+<body>
+	<div class="container">
+	<span>Sorry for the inconvenience we will inform u once ready...</span>
+	<header role="banner">
+		 <div id="logo">
+		 	<img src="http://www.planwallpaper.com/static/images/beautiful-sunset-images-196063.jpg" alt="Sasquatch Records" />
+		 </div>
+		 	<h1>Sasquatch Records <span><a href="">Sass</a></span></h1>
+	</header>
+	<br><br>
+<div class="row">
+	<form id="form_val" action="PolymerForm/example/index.html" method="post" onsubmit="validateForm();">
+	<div class="col-md-6">
+		<div class="row">
+			<div class="col-md-6">
+				<input type="text" name="Enter text." class="demo-form" label="User Name" required>
+				<input type="password" name="Enter password." class="demo-form" label="Password" required>
+			</div>
+		</div>
+		<input type="button" value="Submit" class="btn btn-warning">
+	</div>
+	</form>
+	<div class="col-md-6">
+	</div>
+</div>
+	
+</div>
+<script>
+	$(document).ready(function(){
+		$(".demo-form").polymerForm({
+			label: "User Name",
+			base_color: "#4CAF50",
+			active_color: "#8BC34A",
+			bar_height: "5px",
+			label_color: "green",
+			origin: "right",
+			margin_top: "30px",
+			margin_bottom: "30px"
+		});
+		$(".demo-form-one").polymerForm({
+			label: "Password"
+		});
+		validateForm();
+	})
+	function validateForm(e) {
+		var name = $("[type='text']").val();
+		var pass = $("[type='password']").val();
+		if(name == "" || pass == "") {
+			alert("Please enter the details");
+		}
+	}
+</script>
+</body>
+</html>
